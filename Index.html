@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jenny the Creator</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f6e6e9;
+      color: #5a3e5c;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #7d4a6e;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #9e6b85;
+      padding: 10px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f6e6e9;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: #5a3e5c;
+      padding: 8px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .search-bar {
+      margin-left: 15px;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #7d4a6e;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    .game {
+      margin-top: 20px;
+      padding: 15px;
+      border: 2px dashed #9e6b85;
+      background-color: #f6e6e9;
+    }
+
+    .contact-form {
+      margin-top: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .contact-form button {
+      background-color: #7d4a6e;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #9e6b85;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Jenny the Creator</h1>
+    <p>Bem-vindo ao meu cantinho de criatividade!</p>
+  </header>
+
+  <nav>
+    <a href="#">Início</a>
+    <div class="dropdown">
+      <a href="#">Opções</a>
+      <div class="dropdown-content">
+        <a href="#">OCs</a>
+        <a href="#">Fics</a>
+        <a href="#">Histórias</a>
+      </div>
+    </div>
+    <a href="#">Sobre</a>
+    <a href="#">Contato</a>
+    <input type="text" class="search-bar" placeholder="Pesquisar...">
+  </nav>
+
+  <main>
+    <h2>Bem-vindo ao meu mundo!</h2>
+    <p>Aqui você encontrará histórias, personagens e muita imaginação.</p>
+
+    <div class="game">
+      <h3>Joguinho Interativo</h3>
+      <p>Clique no botão para descobrir um OC aleatório!</p>
+      <button onclick="alert('Seu OC é: Aventureiro Sonhador!')">Descubra seu OC</button>
+    </div>
+
+    <div class="contact-form">
+      <h3>Contato</h3>
+      <form>
+        <input type="text" placeholder="Nome" required>
+        <input type="email" placeholder="E-mail" required>
+        <textarea placeholder="Sua mensagem" rows="5" required></textarea>
+        <button type="submit">Enviar com carinho</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2024 Jenny the Creator. Feito com ♥ e imaginação.</p>
+  </footer>
+</body>
+
+</html>
