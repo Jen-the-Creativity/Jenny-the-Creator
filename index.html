@@ -139,8 +139,17 @@
       width: 30px;
       height: 30px;
       position: absolute;
-      animation: voar 30s ease-in-out infinite;
+      transition: width height 0.7s;
+      animation: voar 30s infinite;
     }
+    
+    .Balon img:hover {
+      width: 60px;
+      height: 60px;
+      transition: width height ease 0.7s;
+    }
+    
+    #balloon { transition-timing-function: ease;}
 
     @keyframes voar {
       0% { top: -50%; left: 90%; }
@@ -172,7 +181,7 @@
 </head>
 
 <body>
-  <div class="Balon"><img src="https://jen-the-creativity.github.io/Jenny-the-Creator/JTC_Balon.png" width="50px" height="50px"></div>
+  <div class="Balon" id="balloon"><img src="https://jen-the-creativity.github.io/Jenny-the-Creator/JTC_Balon.png" width="50px" height="50px"></div>
   <header>
     <img src="https://jen-the-creativity.github.io/Jenny-the-Creator/JTC_Logo.png" alt="Logo" height="100px">
     <div class="search-container">
