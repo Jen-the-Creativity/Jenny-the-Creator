@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jenny the Creator - Histórias</title>
+  <link rel="icon" href="https://jen-the-creativity.github.io/Jenny-the-Creator/JTC_Logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #fcf6fa;
+      --color-primary: #7d4a6e;
+      --color-secondary: #9e6b85;
+      --color-accent: #f4b6c2;
+      --color-text: #4b2b38;
+      --color-light: #fff;
+      --color-hover: #e8c7d3;
+      --shadow: 0 4px 14px rgba(137, 65, 97, 0.12);
+      --radius: 16px;
+      --transition: 0.3s cubic-bezier(.4,0,.2,1);
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--color-bg);
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      color: var(--color-text);
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(90deg,#7d4a6e 60%, #9e6b85 100%);
+      color: var(--color-light);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 110px;
+      box-shadow: var(--shadow);
+      position: relative;
+      z-index: 2;
+    }
+
+    header img[alt="Logo"] {
+      height: 90px;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px #7d4a6e33;
+      background: var(--color-light);
+      padding: 6px;
+      margin-right: 16px;
+      transition: transform 0.2s;
+    }
+    header img[alt="Logo"]:hover { transform: scale(1.07); }
+
+    nav {
+      background: var(--color-secondary);
+      color: var(--color-light);
+      box-shadow: 0 2px 10px #7d4a6e11;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    nav > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 0;
+    }
+    nav a {
+      color: var(--color-light);
+      text-decoration: none;
+      margin: 0 14px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 25px;
+      transition: background var(--transition), color var(--transition);
+      font-size: 1.08rem;
+    }
+    nav a:hover {
+      background: var(--color-hover);
+      color: var(--color-primary);
+    }
+    .dropdown { position: relative; display: inline-block;}
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: var(--color-light);
+      min-width: 160px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      z-index: 10;
+      top: 38px;
+      left: 0;
+      overflow: hidden;
+      border: 1px solid #e8c7d3;
+      animation: fadeIn 0.2s;
+    }
+    .dropdown-content a {
+      color: var(--color-primary);
+      padding: 12px 20px;
+      text-decoration: none;
+      display: block;
+      font-weight: 500;
+      background: var(--color-light);
+      border-bottom: 1px solid #f4b6c266;
+    }
+    .dropdown-content a:last-child { border-bottom: none; }
+    .dropdown:hover .dropdown-content { display: block; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-6px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    main {
+      padding: 54px 24px 24px 24px;
+      text-align: center;
+      background: var(--color-bg);
+      color: var(--color-text);
+      min-height: 68vh;
+    }
+
+    .hero {
+      background: linear-gradient(90deg, #f4b6c267 40%, #fff0 100%);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 0 auto 28px auto;
+      max-width: 760px;
+      padding: 38px 28px 28px 28px;
+      animation: fadeIn 0.8s;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 10px #f4b6c277;
+    }
+    .hero p {
+      font-size: 1.13rem;
+      color: var(--color-secondary);
+      line-height: 1.5;
+      margin: 0 auto 8px auto;
+      max-width: 620px;
+      font-weight: 500;
+    }
+
+    .books-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin: 0 auto;
+      max-width: 1100px;
+      padding: 0 10px;
+      margin-top: 24px;
+    }
+    .book-card {
+      background: var(--color-light);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px 18px 22px 18px;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 220px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      border: 1.5px solid #f4b6c230;
+    }
+    .book-card:hover {
+      transform: translateY(-7px) scale(1.035);
+      box-shadow: 0 10px 24px #e8c7d355;
+      background: linear-gradient(120deg, #fff, #f4b6c211 100%);
+      border-color: var(--color-accent);
+    }
+    .book-cover {
+      width: 90px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      box-shadow: 0 3px 8px #7d4a6e22;
+      background: #f4b6c255;
+      border: 2px solid #f4b6c2;
+    }
+    .book-title {
+      font-size: 1.18rem;
+      color: var(--color-primary);
+      font-weight: bold;
+      margin-bottom: 8px;
+      margin-top: 2px;
+    }
+    .book-desc {
+      font-size: 0.97rem;
+      color: var(--color-text);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(90deg,#7d4a6e 60%, #9e6b85 100%);
+      color: var(--color-light);
+      text-align: center;
+      padding: 20px 0 14px 0;
+      margin-top: 28px;
+      font-size: 1.01rem;
+      letter-spacing: 0.02em;
+      box-shadow: 0 -2px 12px #7d4a6e18;
+    }
+    footer span {
+      color: var(--color-accent);
+      font-weight: bold;
+      font-size: 1.15em;
+      margin: 0 2px;
+    }
+    footer .footer-links {
+      margin-top: 10px;
+      font-size: 0.95em;
+    }
+    footer .footer-links a {
+      color: #f4b6c2;
+      margin: 0 8px;
+      text-decoration: underline dotted;
+      transition: color var(--transition);
+    }
+    footer .footer-links a:hover { color: #fff; }
+
+    /* Responsivo */
+    @media (max-width: 1024px) {
+      .books-container { grid-template-columns: repeat(2,1fr);}
+      header { flex-direction: column; height: auto; padding: 18px; gap: 16px;}
+    }
+    @media (max-width: 768px) {
+      .books-container { grid-template-columns: 1fr;}
+      .hero { padding: 30px 8px 22px 8px;}
+      nav > div { flex-wrap: wrap;}
+      header img[alt="Logo"] { height: 70px;}
+      main { padding: 34px 5px 16px 5px;}
+    }
+    @media (max-width: 500px) {
+      .hero h2 { font-size: 2rem;}
+      .book-card { padding: 14px 4px;}
+      .book-cover { width: 70px; height: 90px;}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="https://jen-the-creativity.github.io/Jenny-the-Creator/JTC_Logo.png" alt="Logo">
+    <span style="font-size:1.5rem; font-weight:bold;">Jenny the Creator</span>
+  </header>
+
+  <nav>
+    <div>
+      <a href="index.html">Início</a>
+      <div class="dropdown">
+        <a href="#">Conteúdos</a>
+        <div class="dropdown-content">
+          <a href="#">OCs</a>
+          <a href="#">Fanfics</a>
+          <a href="historias.html">Histórias</a>
+        </div>
+      </div>
+      <a href="#">Sobre</a>
+      <a href="#">Contato</a>
+      <a href="#">Beijos</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <h2>Minhas Histórias</h2>
+      <p>
+        Descubra meus livros, contos e histórias! Clique em um livro para ler online em outra plataforma.<br>
+        Todos feitos com carinho e muita imaginação.
+      </p>
+    </section>
+    <section class="books-container">
+      <a class="book-card" href="https://www.wattpad.com/story-id-exemplo1" target="_blank" rel="noopener">
+        <img class="book-cover" src="https://jen-the-creativity.github.io/Jenny-the-Creator/JTC_Book1.png" alt="Capa Livro 1">
+        <div class="book-title">O Segredo do Jardim</div>
+        <div class="book-desc">
+          Uma aventura misteriosa em um jardim encantado. Descubra segredos, amizade e magia...
+        </div>
+      </a>
+      <a class="book-card" href="https://www.wattpad.com/story-id-exemplo2" target="_blank" rel="noopener">
+        <img class="book-cover" src="https://jen-the-creativity.github.io/Jenny-the-Creator/JTC_Book2.png" alt="Capa Livro 2">
+        <div class="book-title">Estrelas no Papel</div>
+        <div class="book-desc">
+          Um romance sobre sonhos e desafios. Quando escrever se torna o caminho para encontrar a si mesma.
+        </div>
+      </a>
+      <a class="book-card" href="https://www.wattpad.com/story-id-exemplo3" target="_blank" rel="noopener">
+        <img class="book-cover" src="https://jen-the-creativity.github.io/Jenny-the-Creator/JTC_Book3.png" alt="Capa Livro 3">
+        <div class="book-title">Além do Horizonte</div>
+        <div class="book-desc">
+          Histórias de esperança, coragem e recomeços para inspirar quem acredita no impossível.
+        </div>
+      </a>
+      <!-- Adicione mais livros seguindo o mesmo padrão acima -->
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 <span>Jenny the Creator</span>. Feito com ♥ e imaginação.</p>
+    <div class="footer-links">
+      <a href="index.html">Início</a>|
+      <a href="#">Sobre</a>|
+      <a href="#">Contato</a>
+    </div>
+  </footer>
+</body>
+
+</html>
