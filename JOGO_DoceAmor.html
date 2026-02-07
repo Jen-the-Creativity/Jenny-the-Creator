@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Amor Doce</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffeef4;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #game {
+      background: white;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 10px;
+    }
+
+    img {
+      width: 200px;
+      margin: 10px 0;
+    }
+
+    .choices button {
+      margin: 5px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #ff8db3;
+      color: white;
+      font-size: 14px;
+    }
+
+    .choices button:hover {
+      background: #ff5f9e;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="game">
+    <h2 id="name">Alex</h2>
+    <img id="image" src="https://via.placeholder.com/200">
+    <p id="text">Oi… você é novo por aqui?</p>
+
+    <div class="choices" id="choices">
+      <button onclick="choice(1)">Oi! Sou sim 😊</button>
+      <button onclick="choice(2)">Não quero conversar</button>
+    </div>
+  </div>
+
+  <script>
+    function choice(option) {
+      const text = document.getElementById("text");
+      const choices = document.getElementById("choices");
+
+      if (option === 1) {
+        text.innerText = "Ah… que bom! Fico feliz em conhecer você 💕";
+        choices.innerHTML = `
+          <button onclick="choice(3)">Sorrir de volta</button>
+          <button onclick="choice(4)">Ficar tímido</button>
+        `;
+      }
+
+      if (option === 2) {
+        text.innerText = "Ah… tudo bem então 😢";
+        choices.innerHTML = "";
+      }
+
+      if (option === 3) {
+        text.innerText = "Ele sorri também. Acho que você ganhou pontos com ele 💖";
+        choices.innerHTML = "";
+      }
+
+      if (option === 4) {
+        text.innerText = "Ele acha isso fofo e ri baixinho 😊";
+        choices.innerHTML = "";
+      }
+    }
+  </script>
+
+</body>
+</html>
